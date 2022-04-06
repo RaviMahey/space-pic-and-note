@@ -8,9 +8,16 @@ datas.open("GET",apiLink,true);
 datas.onload = function(){
 	if(this.status===200){
 		json = JSON.parse(this.response); 
+		document.getElementById("one").innerHTML=`Today's space picture (${json.date})`;
+
 		document.getElementById("image").src = json.hdurl;
 		document.getElementById("card-text").innerHTML= json.explanation;
+		// document.getElementById("date").innerHTML= json.date;
+		document.getElementById("title").innerHTML= json.title;
+
+		
 		console.log(json);
+
 	}
 	else {
 		console.log("some error");
